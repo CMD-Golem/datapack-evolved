@@ -1,0 +1,41 @@
+{
+	"name": "item.minecraft.firework_rocket",
+	"stack": "normal",
+
+	"creative_tabs": [
+		"minecraft:tools_and_utilities",
+		"minecraft:combat"
+	],
+
+	"on_use": [
+		{
+			"type": "minecraft:summon_entity",
+			"positioned": "target_space",
+			"entity": "minecraft:fireworks_rocket",
+			
+			"conditions": [
+				{
+					"condition": "minecraft:target_block"
+				}
+			]
+		},
+		{
+			"type": "item_special_firework_speedboost",
+
+			"conditions": [
+				{
+					"condition": "minecraft:entity_properties",
+					"predicate": {
+						"equipment": {
+							"chest": {
+								"items": [
+									"minecraft:elytra"
+								]
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,101 @@
+{
+	"name": "item.minecraft.carrot",
+	"stack": "normal",
+
+	"creative_tabs": [
+		"minecraft:food_and_drinks"
+	],
+
+	"on_use": [
+		{
+			"type": "minecraft:place_block",
+			"positioned": "target_space",
+			"block": "minecraft:carrots",
+			"replace": false,
+
+			"conditions": [
+				{
+					"condition": "minecraft:target_block",
+					"predicate": {
+						"block_face": "top",
+						"block": "minecraft:farmland"
+					}
+				}
+			]
+		},
+		{
+			"type": "minecraft:block_modifier",
+			"positioned": "target_block",
+			"block_modifiers": [
+				{
+					"function": "minecraft:set_level",
+					"level": 1,
+					"add": true
+				}
+			],
+
+			"conditions": [
+				{
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:block_state_property",
+						"block": "minecraft:composter",
+						"properties": {
+							"level": "7"
+						}
+					}
+				},
+				{
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:block_state_property",
+						"block": "minecraft:composter",
+						"properties": {
+							"level": "8"
+						}
+					}
+				},
+				{
+					"condition": "minecraft:random_chance",
+					"chance": 0.65
+				}
+			]
+		},
+		{
+			"type": "minecraft:item_eat",
+			"eating": {
+				"duration": 30,
+				"hunger": 3.0,
+				"saturation": 3.6
+			},
+			
+			"conditions": [
+				{
+					"condition": "minecraft:alternative",
+					"terms": [
+						{
+							"condition": "minecraft:inverted",
+							"term": {
+								"condition": "minecraft:entity_properties",
+								"entity": "this",
+								"predicate": {
+									"nbt": "foodLevel:20"
+								}
+							}
+						},
+						{
+							"condition": "minecraft:entity_properties",
+							"entity": "this",
+							"predicate": {
+								"type_specific": {
+									"type": "player",
+									"gamemode": "creative"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

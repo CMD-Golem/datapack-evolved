@@ -1,0 +1,26 @@
+{
+	"name": "item.minecraft.painting",
+	"stack": "normal",
+
+	"creative_tabs": [
+		"minecraft:functional_blocks"
+	],
+
+	"on_use": [
+		{
+			"type": "minecraft:summon_entity",
+			"positioned": "target_space",
+			"entity": "minecraft:painting",
+
+			"conditions": [
+				{
+					"condition": "minecraft:target_block",
+					"predicate": {
+						"block_face": "side",
+						"check_range": "fit"
+					}
+				}
+			]
+		}
+	]
+}

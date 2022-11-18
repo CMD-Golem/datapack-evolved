@@ -1,0 +1,23 @@
+{
+	"name": "item.minecraft.stone",
+	"stack": "64",
+
+	"creative_tabs": [
+		"minecraft:building_blocks",
+		"minecraft:natural_blocks"
+	],
+
+	"on_use": [
+		{
+			"type": "minecraft:setblock",
+			"positioned": "target_space",
+			"block": "minecraft:stone",
+
+			"conditions": [
+				{
+					"condition": "minecraft:target_block"
+				}
+			]
+		}
+	]
+}

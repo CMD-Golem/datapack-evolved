@@ -1,0 +1,22 @@
+{
+	"name": "item.minecraft.iron_chestplate",
+	"durability": 240,
+	"repair_item": "minecraft:iron_ingot",
+	"stack": "none",
+	"enchantments": "#minecraft:chestplates",
+	"equippable": "chest",
+
+	"modifiers": [
+		{
+			"attribute": "minecraft:generic.armor",
+			"name": "generic.armor",
+			"amount": 6.0,
+			"operation": "addition",
+			"slot": "chest"
+		}
+	],
+
+	"creative_tabs": [
+		"minecraft:combat"
+	]
+}

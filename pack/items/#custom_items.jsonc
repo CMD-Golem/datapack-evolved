@@ -1,0 +1,75 @@
+{
+	"name": "item.minecraft.crossbow", // translation key or normal string
+	"durability": 465, // 0 for no durability
+	"repair_item": "minecraft:diamond", // only if durability is not 0
+	"stack": "none", // none (1), small (16), normal (64)
+	"burn_time": 1.5, // can be used as fuel in ofen
+	"enchantments": "#minecraft:crossbow", // enchantment tag or a list of enchantments
+
+
+	"condition": "equippable", // equippable, eatable, 
+	"properties": {
+		"hunger": 5.0,
+		"saturation": 2.0
+	},
+
+	"conditions_on_use": [
+		{
+			"condition": "target_block",
+			"predicate": {
+				"block_face": "top",
+				"blocks": [
+					"couldron"
+				]
+			},
+			"result_await": 2000,
+			"results": [
+				{
+					"type": "function",
+					"properties": {
+						"function": "datapack:function",
+						"positioned": "target_block", //target_space, target_entity, target_block
+						"as": "this"
+					}	
+				},
+				{
+					"type": "summon_entity",
+					"properties": {
+						"entity": "creeper",
+						"positioned": "target_space",
+						"nbt": {
+						
+						}
+					}
+				},
+				{
+					"type": "place_block",
+					"properties": {
+						"block": "stone",
+						"positioned": "target_space"
+					}
+				},
+				{
+					"type": "modify_entity",
+					"properties": {
+						"positioned": "target_entity"
+					}
+				}
+			]
+		}
+	],
+
+	"modifiers": [
+		{
+			"attribute": "minecraft:generic.attack_damage",
+			"name": "generic.attack_damage",
+			"amount": 5.0,
+			"operation": "addition",
+			"slot": "mainhand"
+		}
+	],
+
+	"creative_tabs": [
+		"minecraft:weapons", "minecraft:tools"
+	]
+}

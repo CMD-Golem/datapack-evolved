@@ -1,0 +1,43 @@
+{
+	"name": "item.minecraft.iron_axe",
+	"durability": 251,
+	"repair_item": "minecraft:iron_ingot",
+	"stack": "none",
+	"enchantments": "#minecraft:axe",
+	"mining": {
+		"effected_blocks": "#minecraft:mineable/axe",
+		"mining_speed_level": 6
+	},
+
+	"creative_tabs": [
+		"minecraft:tools_and_utilities",
+		"minecraft:combat"
+	],
+
+	"modifiers": [
+		{
+			"attribute": "minecraft:generic.attack_damage",
+			"name": "generic.attack_damage",
+			"amount": 9.0,
+			"operation": "addition",
+			"slot": "mainhand"
+		},
+		{
+			"attribute": "minecraft:generic.attack_speed",
+			"name": "generic.attack_speed",
+			"amount": 0.9,
+			"operation": "addition",
+			"slot": "mainhand"
+		}
+	],
+
+	"on_use": [
+		{
+			"type": "minecraft:item_special_disable_shield",
+			"as": "targeted_entity"
+		},
+		{
+			"type": "minecraft:item_special_stripping"
+		}
+	]
+}

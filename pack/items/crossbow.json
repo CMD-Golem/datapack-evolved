@@ -1,0 +1,17 @@
+{
+	"name": "item.minecraft.crossbow",
+	"durability": 465,
+	"stack": "none",
+	"burn_time": 1.5,
+	"enchantments": "#minecraft:crossbow",
+
+	"creative_tabs": [
+		"minecraft:combat"
+	],
+
+	"on_use": [
+		{
+			"type": "minecraft:item_special_shooting"
+		}
+	]
+}
