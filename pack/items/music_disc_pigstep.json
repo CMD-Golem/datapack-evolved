@@ -1,0 +1,16 @@
+{
+	"name": "item.minecraft.carrot_on_a_stick",
+	"durability": 25,
+	"stack": "none",
+	"enchantments": "#minecraft:generic",
+
+	"creative_tabs": [
+		"minecraft:tools_and_utilities"
+	],
+
+	"on_use": [
+		{
+			"type": "minecraft:item_special_onastick"
+		}
+	]
+}
